@@ -1,0 +1,616 @@
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="InfoJogos - Informações completas sobre Evil West, God of War, Hollow Knight e 7 outros jogos épicos.">
+    <title>InfoJogos • 10 Jogos Épicos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --tw-color-primary: #c026d3;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .title-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(90deg, #1a0f2e 0%, #2a0f1f 100%);
+        }
+
+        .card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 25px 50px -12px rgb(192 38 211);
+        }
+
+        .modal {
+            animation: modalPop 0.3s ease;
+        }
+
+        @keyframes modalPop {
+            0% { transform: scale(0.95); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #c026d3;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white dark">
+    <!-- NAVBAR -->
+    <nav class="bg-zinc-900 border-b border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-9 h-9 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center text-2xl shadow-lg">
+                        👾
+                    </div>
+                    <h1 class="title-font text-3xl tracking-tighter font-semibold">InfoJogos</h1>
+                </div>
+
+                <!-- Menu -->
+                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                    <a href="#inicio" onclick="scrollToSection('inicio')" class="nav-link">Início</a>
+                    <a href="#jogos" onclick="scrollToSection('jogos')" class="nav-link">Os 10 Jogos</a>
+                    <a href="#sobre" onclick="scrollToSection('sobre')" class="nav-link">Sobre</a>
+                    <a href="#contato" onclick="scrollToSection('contato')" class="nav-link">Contato</a>
+                </div>
+
+                <div class="flex items-center gap-x-4">
+                    <div class="bg-zinc-800 text-zinc-400 px-4 py-1.5 rounded-3xl text-sm flex items-center gap-x-2 hover:bg-zinc-700 transition-colors">
+                        <span class="relative flex h-3 w-3">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                        </span>
+                        Online
+                    </div>
+                    
+                   
+                
+
+                    <button onclick="toggleMobileMenu()" class="md:hidden w-10 h-10 flex items-center justify-center">
+                        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-zinc-900 border-t border-zinc-800 px-6 py-4">
+            <div class="flex flex-col gap-y-4 text-sm">
+                <a href="#inicio" onclick="scrollToSection('inicio');toggleMobileMenu()" class="py-2">Início</a>
+                <a href="#jogos" onclick="scrollToSection('jogos');toggleMobileMenu()" class="py-2">Os 10 Jogos</a>
+                <a href="#sobre" onclick="scrollToSection('sobre');toggleMobileMenu()" class="py-2">Sobre</a>
+                <a href="#contato" onclick="scrollToSection('contato');toggleMobileMenu()" class="py-2">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero-bg pt-20 pb-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur-md text-white text-sm font-medium px-6 py-3 rounded-3xl border border-white/20">
+                    <span class="text-amber-400">✦</span>
+                    10 JOGOS SELECIONADOS
+                </div>
+                
+                <h1 class="title-font text-6xl md:text-7xl leading-none tracking-tighter font-bold">
+                    EVIL WEST.<br>
+                    GOD OF WAR.<br>
+                    HOLLOW KNIGHT.<br>
+                    <span class="text-purple-400">E MUITO MAIS.</span>
+                </h1>
+                
+                <p class="text-xl text-zinc-300 max-w-lg">
+                    Um site completo com informações, curiosidades, gameplay e tudo que você precisa saber sobre 10 jogos épicos de ação e aventura.
+                </p>
+                
+                <div class="flex items-center gap-x-4">
+                    <button onclick="document.getElementById('jogos').scrollIntoView({ behavior: 'smooth' })" 
+                            class="bg-purple-600 hover:bg-purple-500 transition-colors text-white px-10 py-4 rounded-3xl text-lg font-semibold flex items-center gap-x-3">
+                        Ver os 10 jogos
+                        <span class="text-2xl">→</span>
+                    </button>
+                    
+                    <a href="https://www.youtube.com/results?search_query=evil+west+trailer" target="_blank"
+                       class="flex items-center gap-x-2 border border-white/30 hover:border-white/60 px-8 py-4 rounded-3xl transition-all">
+                        <span class="text-red-500">▶</span>
+                        Assistir trailers
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-x-8 text-sm">
+                    <div>
+                        <span class="block text-zinc-400">Desenvolvido por</span>
+                        <span class="font-semibold">Luiz Henrique</span>
+                    </div>
+                    <div class="h-6 w-px bg-white/20"></div>
+                    <div class="flex -space-x-4">
+                        <div class="w-8 h-8 bg-gradient-to-br from-red-500 to-orange-500 rounded-2xl flex items-center justify-center text-xs ring-2 ring-zinc-900">👹</div>
+                        <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center text-xs ring-2 ring-zinc-900">🗡️</div>
+                        <div class="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center text-xs ring-2 ring-zinc-900">🪲</div>
+                    </div>
+                    <p class="text-zinc-400 text-sm">Evil West • God of War • Hollow Knight • +7</p>
+                </div>
+            </div>
+
+            <!-- Hero visual -->
+            <div class="relative hidden md:block">
+                <div class="absolute -inset-4 bg-gradient-to-br from-purple-600/30 to-pink-600/30 blur-3xl rounded-[4rem] -rotate-6"></div>
+                <div class="relative bg-zinc-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
+                    <img src="file:///C:/Users/Aluno/Downloads/xbox-controller-v0-rk7sg157ul6e1.webp" 
+                         alt="Evil West, God of War e Hollow Knight" 
+                         class="rounded-2xl shadow-2xl w-full object-cover aspect-video">
+                    <div class="absolute -bottom-4 -right-4 bg-white text-zinc-900 text-xs font-bold px-5 py-2 rounded-2xl flex items-center gap-x-2 shadow-xl">
+                        <span class="text-emerald-500">★</span>
+                        10 JOGOS IMPERDÍVEIS
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DOS JOGOS -->
+    <section id="jogos" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <span class="text-purple-400 text-sm font-medium tracking-widest">SELEÇÃO ESPECIAL</span>
+                <h2 class="title-font text-5xl font-semibold tracking-tighter">10 Jogos Épicos</h2>
+                <p class="text-zinc-400 mt-3">Evil West, God of War, Hollow Knight e 7 títulos incríveis de ação, aventura e narrativa</p>
+            </div>
+            <div class="hidden sm:flex items-center gap-x-2 text-sm text-zinc-400">
+                <div class="px-4 py-2 bg-zinc-900 rounded-3xl flex items-center">
+                    Filtrar por: 
+                    <span onclick="filterGames('all')" class="ml-3 cursor-pointer font-medium text-white">Todos</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid de jogos (preenchido via JavaScript) -->
+        <div id="games-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+            <!-- Cards são gerados dinamicamente pelo JS -->
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="bg-zinc-900 py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7">
+                    <h2 class="title-font text-5xl font-semibold tracking-tighter mb-6">Sobre o InfoJogos</h2>
+                    <p class="text-lg text-zinc-300 leading-relaxed">
+                        Este site foi criado especialmente para você que ama jogos de ação, aventura e narrativas marcantes. 
+                        Aqui você encontra informações detalhadas sobre <strong>Evil West</strong>, <strong>God of War Ragnarök</strong>, 
+                        <strong>Hollow Knight</strong> e mais 7 títulos selecionados a dedo.
+                    </p>
+                    <p class="text-lg text-zinc-300 leading-relaxed mt-6">
+                        Cada jogo tem ficha técnica, sinopse, curiosidades e links para trailers e lojas. 
+                        Perfeito para decidir seu próximo jogo ou simplesmente matar a saudade!
+                    </p>
+                    
+                    <div class="mt-10 grid grid-cols-3 gap-6">
+                        <div class="bg-zinc-800/50 rounded-3xl p-6 text-center"></div>
+                            <div class="text-4xl mb-2">🩸</div>
+                            <p class="font-semibold">Evil West</p>
+                            <p class="text-xs text-zinc-400">Vampiros no Velho Oeste</p>
+                        </div>
+                        <div class="bg-zinc-800/50 rounded-3xl p-6 text-center">
+                            <div class="text-4xl mb-2">⚔️</div>
+                            <p class="font-semibold">God of War</p>
+                            <p class="text-xs text-zinc-400">Mitologia nórdica</p>
+                        </div>
+                        <div class="bg-zinc-800/50 rounded-3xl p-6 text-center">
+                            <div class="text-4xl mb-2">🪲</div>
+                            <p class="font-semibold">Hollow Knight</p>
+                            <p class="text-xs text-zinc-400">Metroidvania clássico</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-5 bg-gradient-to-br from-purple-900/30 to-pink-900/30 border border-purple-500/30 rounded-3xl p-10">
+                    <h3 class="text-2xl font-semibold mb-6">Por que esses 10 jogos?</h3>
+                    <ul class="space-y-6">
+                        <li class="flex gap-x-4"><span class="text-purple-400 font-bold">01</span> Narrativas épicas e emocionantes</li>
+                        <li class="flex gap-x-4"><span class="text-purple-400 font-bold">02</span> Combate viciante e fluido</li>
+                        <li class="flex gap-x-4"><span class="text-purple-400 font-bold">03</span> Mundos ricos e imersivos</li>
+                        <li class="flex gap-x-4"><span class="text-purple-400 font-bold">04</span> Alta qualidade de produção</li>
+                        <li class="flex gap-x-4"><span class="text-purple-400 font-bold">05</span> Disponíveis em várias plataformas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DE DETALHES -->
+    <div id="game-modal" onclick="if(event.target === this) hideModal()" 
+         class="hidden fixed inset-0 bg-black/80 backdrop-blur-lg z-[9999] flex items-center justify-center p-6">
+        <div onclick="event.stopImmediatePropagation()" 
+             class="modal bg-zinc-900 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+            
+            <div class="px-8 pt-8 pb-4 flex justify-between items-start border-b border-zinc-800">
+                <div id="modal-title" class="title-font text-4xl font-semibold"></div>
+                <button onclick="hideModal()" class="text-4xl leading-none text-zinc-400 hover:text-white">×</button>
+            </div>
+            
+            <div class="flex-1 overflow-auto p-8">
+                <div class="grid md:grid-cols-5 gap-8">
+                    <!-- Imagem grande -->
+                    <div class="md:col-span-2">
+                        <img id="modal-image" class="w-full aspect-video object-cover rounded-2xl shadow-2xl" alt="">
+                    </div>
+                    
+                    <!-- Informações -->
+                    <div class="md:col-span-3 space-y-6">
+                        <div id="modal-description" class="text-zinc-300 leading-relaxed text-lg"></div>
+                        
+                        <div class="grid grid-cols-2 gap-6 text-sm">
+                            <div>
+                                <span class="block text-zinc-400 mb-1">Ano de lançamento</span>
+                                <span id="modal-year" class="font-semibold text-xl"></span>
+                            </div>
+                            <div>
+                                <span class="block text-zinc-400 mb-1">Desenvolvedor</span>
+                                <span id="modal-developer" class="font-semibold text-xl"></span>
+                            </div>
+                            <div>
+                                <span class="block text-zinc-400 mb-1">Gênero</span>
+                                <span id="modal-genre" class="font-semibold text-xl"></span>
+                            </div>
+                            <div>
+                                <span class="block text-zinc-400 mb-1">Plataformas</span>
+                                <span id="modal-platforms" class="font-semibold text-xl"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-6 border-t border-zinc-800">
+                            <p class="text-xs uppercase tracking-widest text-zinc-400 mb-3">Curiosidades rápidas</p>
+                            <div id="modal-curiosities" class="text-zinc-300"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-8 border-t border-zinc-800 flex justify-between items-center bg-zinc-950">
+                <a id="modal-trailer-link" href="#" target="_blank"
+                   class="flex items-center gap-x-3 text-white hover:text-purple-400 transition-colors">
+                    <span class="text-3xl">▶</span>
+                    <span class="font-medium">Assistir trailer.</span>
+                </a>
+                
+                <button onclick="hideModal()" 
+                        class="px-10 py-3 bg-white text-zinc-900 rounded-3xl font-semibold hover:bg-amber-300 transition-colors">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTATO / FOOTER -->
+    <footer id="contato" class="bg-black py-16 border-t border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div>
+                    <div class="flex items-center gap-x-3 mb-4">
+                        <div class="w-9 h-9 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center text-2xl">👾</div>
+                        <span class="title-font text-3xl">InfoJogos</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm">Site criado por Luiz Henrique • Abril 2026</p>
+                    <p class="text-zinc-500 text-xs mt-1">Apenas um site para apresentar no curso.</p>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    
+                    
+                    <div class="mt-8 flex justify-center md:justify-end gap-x-6 text-2xl">
+                        <span>🕹️</span>
+                        <span>🎮</span>
+                        <span>🔥</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center text-xs text-zinc-500 mt-12">
+                Este é um site 100% funcional feito em um único arquivo HTML. 
+               
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Configuração do Tailwind
+        function initializeTailwind() {
+            return {
+                config(userConfig = {}) {
+                    return {
+                        content: [],
+                        theme: {
+                            extend: {},
+                        },
+                        plugins: [],
+                        ...userConfig,
+                    }
+                },
+                theme(userConfig = {}) {
+                    return {
+                        configUser: this.config(userConfig),
+                        theme: {
+                            extend: {
+                                colors: {
+                                    primary: '#c026d3'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        // Dados dos 10 jogos
+        const gamesData = [
+            {
+                id: 1,
+                title: "Evil West",
+                year: 2022,
+                developer: "Flying Wild Hog",
+                genre: "Ação e Aventura / Shooter",
+                platforms: "PC, PS4, PS5, Xbox One, Xbox Series X|S",
+                description: "Em um Velho Oeste alternativo tomado por vampiros, você é Jesse Rentier, agente de uma organização secreta. Use armas de fogo, chicotes elétricos e habilidades sobrenaturais para caçar monstros em um combate visceral e cinematográfico.",
+                image: "file:///C:/Users/Aluno/Downloads/capa%20do%20site/header.jpg",
+                trailer: "https://www.youtube.com/results?search_query=evil+west+official+trailer",
+                curiosities: "• Combate corpo a corpo + tiro em terceira pessoa<br>• História com vampiros steampunk<br>• Suporte a multiplayer cooperativo"
+            },
+            {
+                id: 2,
+                title: "God of War Ragnarök",
+                year: 2022,
+                developer: "Santa Monica Studio",
+                genre: "Ação e Aventura",
+                platforms: "PS4, PS5, PC",
+                description: "Kratos e Atreus voltam para enfrentar o fim do mundo nórdico. Uma jornada emocional, cheia de combates brutais, quebra-cabeças e mitologia épica. Um dos melhores jogos da geração.",
+                image: "file:///C:/Users/Aluno/Downloads/God_of_War_2018_capa.png",
+                trailer: "https://youtu.be/maMjiMRiD_o?si=AUGDpd4zF0lyDBTM",
+                curiosities: "• Narrativa vencedora do Game of the Year<br>• Kratos mais humano que nunca<br>• Novo sistema de combate com Atreus"
+            },
+            {
+                id: 3,
+                title: "Hollow Knight",
+                year: 2017,
+                developer: "Team Cherry",
+                genre: "Metroidvania / Ação e Aventura",
+                platforms: "PC, Nintendo Switch, PS4, PS5, Xbox",
+                description: "Desça ao reino subterrâneo de Hallownest como um cavaleiro inseto silencioso. Um dos maiores metroidvanias da história, com exploração profunda, chefes épicos e uma trilha sonora inesquecível.",
+                image: "file:///C:/Users/Aluno/Downloads/hollow-knight-pc-mac-steam-cover.jpg",
+                trailer: "https://www.youtube.com/results?search_query=hollow+knight+official+trailer",
+                curiosities: "• Mais de 30 horas de conteúdo<br>• Expansões gratuitas Silksong em desenvolvimento<br>• Um dos jogos indie mais premiados"
+            },
+            {
+                id: 4,
+                title: "Elden Ring",
+                year: 2022,
+                developer: "FromSoftware",
+                genre: "RPG de Ação / Mundo Aberto",
+                platforms: "PC, PS4, PS5, Xbox",
+                description: "Crie seu próprio herói e explore um mundo gigantesco criado por Hidetaka Miyazaki e George R.R. Martin. Liberdade total, chefes colossais e um dos melhores open-world já feitos.",
+                image: "file:///C:/Users/Aluno/Downloads/7b54f5e4-0857-4ce3-8a18-2b8c431e8a9e.jpg",
+                trailer: "https://www.youtube.com/results?search_query=elden+ring+trailer",
+                curiosities: "• Game of the Year 2022<br>• Mais de 20 milhões de cópias vendidas<br>• DLC Shadow of the Erdtree é épico"
+            },
+            {
+                id: 5,
+                title: "Bloodborne",
+                year: 2015,
+                developer: "FromSoftware",
+                genre: "RPG de Ação / Horror",
+                platforms: "PlayStation 4 / PS5",
+                description: "Caçe bestas em Yharnam, uma cidade amaldiçoada por uma doença cósmica. Combate rápido, atmosfera gótica e um dos melhores jogos da era dos soulslike.",
+                image: "file:///C:/Users/Aluno/Downloads/593327.webp",
+                trailer: "https://www.youtube.com/results?search_query=bloodborne+trailer",
+                curiosities: "• Exclusivo PlayStation<br>• Estética lovecraftiana<br>• DLC The Old Hunters é obrigatório"
+            },
+            {
+                id: 6,
+                title: "Ghost of Tsushima",
+                year: 2020,
+                developer: "Sucker Punch Productions",
+                genre: "Ação e Aventura",
+                platforms: "PS4, PS5, PC",
+                description: "Seja o último samurai de Tsushima. Lute contra a invasão mongol usando katana, arco e táticas de stealth em um Japão feudal belíssimo.",
+                image: "file:///C:/Users/Aluno/Downloads/b3iB2zf2xHj9shC0XDTULxND.avif",
+                trailer: "https://www.youtube.com/results?search_query=ghost+of+tsushima+trailer",
+                curiosities: "• Modo foto lendário<br>• Diretor’s Cut inclui ilha Iki<br>• História baseada em fatos reais"
+            },
+            {
+                id: 7,
+                title: "The Witcher 3: Wild Hunt",
+                year: 2015,
+                developer: "CD Projekt Red",
+                genre: "RPG de Ação / Mundo Aberto",
+                platforms: "PC, PS4, PS5, Xbox, Switch",
+                description: "Geralt de Rivia em sua maior aventura. Caçe monstros, faça escolhas difíceis e viva uma história que mudou os RPGs para sempre.",
+                image: "file:///C:/Users/Aluno/Downloads/header.jpg",
+                trailer: "https://www.youtube.com/results?search_query=the+witcher+3+trailer",
+                curiosities: "• Mais de 50 milhões de cópias<br>• DLCs Blood and Wine e Hearts of Stone são obras-primas"
+            },
+            {
+                id: 8,
+                title: "Cyberpunk 2077",
+                year: 2020,
+                developer: "CD Projekt Red",
+                genre: "RPG de Ação / Mundo Aberto",
+                platforms: "PC, PS5, Xbox Series",
+                description: "Viva como V em Night City. Cyberware, corporações malignas, romances e escolhas que mudam o destino da cidade.",
+                image: "file:///C:/Users/Aluno/Downloads/f172668ac499434b33917199f2021f753d42b73862d76d3c93d04a474dade847.avif",
+                trailer: "https://www.youtube.com/results?search_query=cyberpunk+2077+trailer",
+                curiosities: "• Atualização 2.0 transformou o jogo<br>• Phantom Liberty é um dos melhores DLCs da história"
+            },
+            {
+                id: 9,
+                title: "Control",
+                year: 2019,
+                developer: "Remedy Entertainment",
+                genre: "Ação e Aventura / Shooter",
+                platforms: "PC, PS4, PS5, Xbox",
+                description: "Jesse Faden assume o Federal Bureau of Control e ganha poderes sobrenaturais para combater forças paranormais em um prédio vivo.",
+                image: "file:///C:/Users/Aluno/Downloads/Diesel_productv2_control_home_Control_Awards-1920x1080-1920x1080-ec09bae0882a0e71f3f536a8fea401fc12da67e1.jpg",
+                trailer: "https://www.youtube.com/results?search_query=control+game+trailer",
+                curiosities: "• Mundo conectado com Alan Wake<br>• Design de arte incrível<br>• Vencedor de vários prêmios de narrativa"
+            },
+            {
+                id: 10,
+                title: "Alan Wake 2",
+                year: 2023,
+                developer: "Remedy Entertainment",
+                genre: "Survival Horror / Ação e Aventura",
+                platforms: "PC, PS5, Xbox Series",
+                description: "Alan Wake e Saga Anderson em um thriller psicológico que mistura realidade e ficção. Um dos melhores jogos de horror dos últimos anos.",
+                image: "file:///C:/Users/Aluno/Downloads/b1641ab1b5ec0c8f76c44e59e9d8a1639c913c98c09d057f.avif",
+                trailer: "https://www.youtube.com/results?search_query=alan+wake+2+trailer",
+                curiosities: "• Narrativa dupla brilhante<br>• Continuação direta do primeiro Alan Wake<br>• Expansões gratuitas"
+            }
+        ]
+
+        // Renderizar cards
+        function renderGames(filteredGames = gamesData) {
+            const grid = document.getElementById('games-grid')
+            grid.innerHTML = ''
+            
+            filteredGames.forEach(game => {
+                const cardHTML = `
+                <div onclick="showGameModal(${game.id})" class="card group cursor-pointer bg-zinc-900 border border-zinc-800 hover:border-purple-500 rounded-3xl overflow-hidden">
+                    <div class="relative">
+                        <img src="${game.image}" alt="${game.title}" class="w-full aspect-video object-cover transition-transform group-hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-black/70 text-white text-xs font-bold px-3 py-1 rounded-2xl">${game.year}</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="title-font text-2xl font-semibold mb-1">${game.title}</h3>
+                        <p class="text-purple-400 text-sm">${game.genre}</p>
+                        <p class="line-clamp-3 text-zinc-400 text-sm mt-4 leading-relaxed">${game.description.substring(0, 130)}...</p>
+                        <div class="mt-6 flex justify-between items-center text-xs">
+                            <span class="bg-zinc-800 px-4 py-2 rounded-3xl">${game.developer}</span>
+                            <span class="text-emerald-400 flex items-center gap-x-1">
+                                <span>Ver detalhes</span>
+                                <span class="text-lg">→</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>`
+                grid.innerHTML += cardHTML
+            })
+            
+            // Se nenhum jogo (improvável)
+            if (filteredGames.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-zinc-400">Nenhum jogo encontrado.</div>`
+            }
+        }
+
+        // Mostrar modal
+        function showGameModal(id) {
+            const game = gamesData.find(g => g.id === id)
+            if (!game) return
+            
+            document.getElementById('modal-title').textContent = game.title
+            document.getElementById('modal-image').src = game.image
+            document.getElementById('modal-description').innerHTML = `<p>${game.description}</p>`
+            document.getElementById('modal-year').textContent = game.year
+            document.getElementById('modal-developer').textContent = game.developer
+            document.getElementById('modal-genre').textContent = game.genre
+            document.getElementById('modal-platforms').textContent = game.platforms
+            document.getElementById('modal-curiosities').innerHTML = game.curiosities
+            document.getElementById('modal-trailer-link').href = game.trailer
+            
+            const modal = document.getElementById('game-modal')
+            modal.classList.remove('hidden')
+            modal.classList.add('flex')
+        }
+
+        function hideModal() {
+            const modal = document.getElementById('game-modal')
+            modal.classList.add('hidden')
+            modal.classList.remove('flex')
+        }
+
+        // Filtro simples (todos)
+        function filterGames(type) {
+            renderGames(gamesData)
+        }
+
+        // Scroll suave
+        function scrollToSection(section) {
+            const el = document.getElementById(section)
+            if (el) el.scrollIntoView({ behavior: 'smooth' })
+        }
+
+        // Menu mobile
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu')
+            const icon = document.getElementById('menu-icon')
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden')
+                icon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6h12v12" />`
+            } else {
+                menu.classList.add('hidden')
+                icon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />`
+            }
+        }
+
+        // Copiar o código HTML inteiro para o usuário
+        function copyHTML() {
+            const html = document.documentElement.outerHTML
+            navigator.clipboard.writeText(html).then(() => {
+                const btn = event.target.closest('button')
+                const originalText = btn.innerHTML
+                
+                btn.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 10l7-7m0 0l7 7" />
+                </svg>
+                Copiado!`
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText
+                }, 2500)
+            })
+        }
+
+        // Inicializar tudo
+        window.onload = function() {
+            initializeTailwind()
+            renderGames()
+            
+            console.log('%c✅ Site InfoJogos criado com sucesso! Evil West, God of War, Hollow Knight e mais 7 jogos carregados.', 'color:#c026d3; font-family:monospace; font-size:13px')
+        }
+    </script>
+</body>
+</html>
